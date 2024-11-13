@@ -10,6 +10,5 @@ avg(tx_fee_usd) as avg_fee_usd,
 sum(tx_fee_usd) as total_fee_usd
 from gas.fees
 where block_time >= date_trunc('day',NOW() - interval '{{interval_days}}' day)
-and blockchain<>'tron'
 group by 1,2
 order by 5 desc, 1 desc
